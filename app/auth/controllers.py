@@ -15,8 +15,10 @@ def before_request():
 
 @auth.route('/login/', methods=['GET', 'POST'])
 def login():
-    form = LoginForm(request.form)
+    if g.user:
+        return redirect(url_for('index'))
 
+    form = LoginForm(request.form)
     if form.validate_on_submit():
         user = users.find_one({'email': form.email.data})
         if user and user['password'] == form.password.data:
@@ -27,4 +29,10 @@ def login():
         flash('Invalid email or password', 'error-message')
 
     return render_template('auth/login.html', form=form)
+
+@auth.route('/logout')
+def logout():
+    g.user = None
+    session.pop('user', None)
+    return redirect(url_for('index'))
 
