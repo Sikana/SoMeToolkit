@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>{% block title %}STACK{% endblock %}</title>
+    {% block css %}{% endblock %}
+    {% block script %}{% endblock %}
+  </head>
+  <body>
+    {% for category, msg in get_flashed_messages(with_categories=true) %}
+      <p class="message flash-{{ category }}">{{ msg }}</p>
+    {% endfor %}
+    <div id="content">{% block content %}{% endblock %}</div>
+  </body>
+</html>

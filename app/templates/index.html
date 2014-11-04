@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <h1>STACK</h1>
+
+  {% if g.user %}
+    <p>Welcome, {{ g.user }}</p>
+  {% endif %}
+
+{% endblock %}
