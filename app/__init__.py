@@ -13,4 +13,7 @@ def not_found(error):
 from app.auth.controllers import auth
 app.register_blueprint(auth)
 
+from app.twitter.controllers import twitter
+app.register_blueprint(twitter)
+
 from app import main
