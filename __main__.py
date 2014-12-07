@@ -59,13 +59,13 @@ if __name__ == "__main__":
             project_name = sys.argv[3]
             password = sys.argv[4]
             resp = db.auth(project_name, password)
-            print json.dumps(resp)
+            print resp
         elif method == 'get_project_list':
             """
             python __main__.py db get_project_list
             """
             resp = db.get_project_list()
-            print json.dumps(resp)
+            print resp
         elif method == 'get_project_detail':
             """
             python __main__.py db get_project_detail project_id
