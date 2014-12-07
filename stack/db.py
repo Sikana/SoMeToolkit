@@ -99,7 +99,7 @@ class DB(object):
             project_id = None
             message = 'Failed'
 
-        resp = {"status": status, "message": message, "project_id": project_id}
+        resp = {'\"status\"': status, "message": message, "project_id": project_id}
 
         return resp
 
