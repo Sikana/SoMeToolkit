@@ -113,7 +113,7 @@ class DB(object):
             status = 1
             project_count = self.stack_config.count()
             project_list = [item for item in projects]
-            resp = {"status": status, "message": "Success", 'project_count': project_count, 'project_list': project_list}
+            resp = {"status": status, "message": "Success", 'project_count22': project_count, 'project_list': project_list}
         else:
             status = 0
             resp = {'status': status, 'message': 'Failed'}
