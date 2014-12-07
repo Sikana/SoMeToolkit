@@ -65,7 +65,7 @@ if __name__ == "__main__":
             python __main__.py db get_project_list
             """
             resp = db.get_project_list()
-            print resp
+            print json.dumps(resp)
         elif method == 'get_project_detail':
             """
             python __main__.py db get_project_detail project_id
